@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../cubit/notification_cubit/notification_state_cubit.dart';
@@ -29,14 +28,14 @@ class NotificationsPage extends StatelessWidget {
                 onPressed: () {
                   NotificationApiService.sendNotificationToAll("my_news");
                 },
-                child: Icon(Icons.browser_updated_sharp)),
+                child: const Icon(Icons.browser_updated_sharp)),
           ],
           iconTheme: const IconThemeData(color: Colors.blue),
           title: const Text(('notifications'),
               style: TextStyle(fontSize: 24, color: Colors.black)),
         ),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: BlocBuilder<NotificationCubit, NotificationState>(
             builder: (context, state) {
               if (state is LoadNotificationProgress) {
@@ -49,7 +48,7 @@ class NotificationsPage extends StatelessWidget {
                       (index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             height: 60,
                             child: Column(
@@ -74,7 +73,7 @@ class NotificationsPage extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.15,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               );
             },

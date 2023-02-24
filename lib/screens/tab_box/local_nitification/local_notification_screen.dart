@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../servise/local_notification.dart';
 
 class LocalSmsPage extends StatefulWidget {
@@ -44,9 +43,9 @@ class _LocalSmsPageState extends State<LocalSmsPage> {
               onPressed: () {
                 currentId++;
                 LocalNotificationService.localNotificationService
-                    .showNotification(id: currentId, name: nameController.text, descriptio: 'send Sms1 ');
+                    .showNotification(id: currentId, name: nameController.text, desckiptio: 'send Sms1 ');
               },
-              child: const Text("SIMPLE Notifiction Send"),
+              child: const Text("SIMPLE Notification Send"),
             ),
             TextFormField(
               controller: name2Controller,
@@ -66,11 +65,11 @@ class _LocalSmsPageState extends State<LocalSmsPage> {
               onPressed: () {
                 currentId++;
                 LocalNotificationService.localNotificationService
-                    .showNotification(id: currentId, name: name2Controller.text, descriptio: 'Simple 2 Sms');
+                    .showNotification(id: currentId, name: name2Controller.text, desckiptio: 'Simple 2 Sms');
               },
               child: const Text("Send Sms 2"),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             TextButton(
               onPressed: () {
                 currentId++;
@@ -80,7 +79,7 @@ class _LocalSmsPageState extends State<LocalSmsPage> {
                   delayedTime: 3,
                 );
               },
-              child: const Text("SCHUADULED NOTIFICATION "),
+              child: const Text("SCHEDULED NOTIFICATION "),
             ),
             TextButton(
               onPressed: () {
@@ -88,7 +87,7 @@ class _LocalSmsPageState extends State<LocalSmsPage> {
                 LocalNotificationService.localNotificationService
                     .showPeriodically(id: currentId);
               },
-              child: const Text("PERIODIC NOTIFICATION EVERY MINUT"),
+              child: const Text("PERIODIC NOTIFICATION EVERY MINUTE"),
             ),
             TextButton(
               onPressed: () {
@@ -96,7 +95,7 @@ class _LocalSmsPageState extends State<LocalSmsPage> {
                 LocalNotificationService.localNotificationService
                     .showNotificationByFirebase();
               },
-              child: const Text("Firabase notificatio"),
+              child: const Text("Firebase notification"),
             ),
             const Expanded(child: SizedBox()),
             TextButton(

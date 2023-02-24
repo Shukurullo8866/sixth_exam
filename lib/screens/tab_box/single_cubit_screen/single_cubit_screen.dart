@@ -22,7 +22,7 @@ class _SingleCubitPageState extends State<SingleCubitPage> {
             onTap: () {
               context.read<SingleStateCubit>().getData();
             },
-            child: Icon(Icons.send_and_archive),
+            child: const Icon(Icons.send_and_archive),
           )
         ],
       ),
@@ -84,8 +84,6 @@ class _SingleCubitPageState extends State<SingleCubitPage> {
                           child: Column(
                             children: [
                               Text("Duration: ${state.codes![index].duration.toString()}"),
-                              //Text("End time: ${state.codes![index].start_time.toString()}"),
-                              // Text("Star time: ${state.codes![index].end_time.toString()}"),
 
                             ],
                           )
@@ -103,7 +101,7 @@ class _SingleCubitPageState extends State<SingleCubitPage> {
             );
           }
           if (state.status == Status.LOADING) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
           return Container();
         }),

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:sixth_exam/screens/tab_box/local_nitification/sms_screen.dart';
@@ -50,7 +49,7 @@ class LocalNotificationService {
 
           debugPrint('PAYLOAD RESULT------> ${notificationResponse.payload}');
         } else {
-          print("PAYLOAD RESULT NULL");
+
         }
       },
     );
@@ -64,7 +63,7 @@ class LocalNotificationService {
 
   @pragma('vm:entry-point')
   void notificationTapBackground(NotificationResponse notificationResponse) {
-    print("TAPPED FROM BACKGROUND");
+
   }
 
 // Android
@@ -76,7 +75,7 @@ class LocalNotificationService {
       String? body,
       String? payload,
       ) async {
-    print(payload);
+
   }
 
   //channel
@@ -89,12 +88,12 @@ class LocalNotificationService {
   );
 
   void showNotification({
-    required int id,required String name ,required String descriptio,
+    required int id,required String name ,required String desckiptio,
   }) {
     flutterLocalNotificationsPlugin.show(
       id,
       name,
-      "$descriptio ID:$id",
+      "$desckiptio ID:$id",
       NotificationDetails(
         android: AndroidNotificationDetails(
           androidNotificationChannel.id,
@@ -110,12 +109,12 @@ class LocalNotificationService {
     );
   }
   void showNotificationByFirebase({
-     int? id, String? name , String? descriptio,
+     int? id, String? name , String? description,
   }) {
     flutterLocalNotificationsPlugin.show(
       id!,
       name,
-      "$descriptio ID:$id",
+      "$description ID:$id",
       NotificationDetails(
         android: AndroidNotificationDetails(
           androidNotificationChannel.id,
@@ -144,7 +143,7 @@ class LocalNotificationService {
           channelDescription: 'To remind you about upcoming birthdays',
         ),
       ),
-      payload: "SCHEADULED NOTIFICATION PAYLOAD DATA ID:$id",
+      payload: "SCHEDULED NOTIFICATION PAYLOAD DATA ID:$id",
       androidAllowWhileIdle: true,
       uiLocalNotificationDateInterpretation:
       UILocalNotificationDateInterpretation.absoluteTime,
@@ -165,7 +164,7 @@ class LocalNotificationService {
         ),
       ),
       androidAllowWhileIdle: true,
-      payload: "PERIODICALLY NOTIFICACYION DATA ID:$id",
+      payload: "PERIODICALLY NOTIFICATION DATA ID:$id",
     );
   }
 

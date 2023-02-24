@@ -9,7 +9,7 @@ import 'package:sixth_exam/servise/local_notification.dart';
 
 import '../../cubit/connectivity/connectivity_state.dart';
 import '../../data/local_db/locak_darabase.dart';
-import '../noInternet_screen/noInternet_screen.dart';
+import '../noInternet_screen/no_internet_screen.dart';
 import 'local_nitification/local_notification_screen.dart';
 import 'multi_cubit_screen/multi_state_screen.dart';
 import 'notification_screen/notification_page.dart';

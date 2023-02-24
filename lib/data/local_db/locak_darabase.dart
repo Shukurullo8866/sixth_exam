@@ -1,5 +1,5 @@
 import 'package:path/path.dart';
-import 'package:sixth_exam/utils/myUtils.dart';
+import 'package:sixth_exam/utils/my_utils.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 
